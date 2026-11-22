@@ -8,5 +8,5 @@ export const config = {
   // Database schema that holds this app's tables (see supabase/schema.sql).
   dbSchema: 'finance',
   // Public address of the app, used in invite links. Leave empty to use the current address.
-  appUrl: '',
+  appUrl: 'https://geno700.github.io/home-finance/',
 };
