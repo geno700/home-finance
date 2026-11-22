@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="description" content="Household budget and expense tracker for the whole family, in Arabic and English." />
+    <title>المساعد المالي المنزلي · Home Finance</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app"><p class="boot">…</p></div>
+    <div id="toasts" aria-live="polite"></div>
+    <script type="module" src="js/app.js"></script>
+    <script>
+      // Makes the app installable and keeps its files fresh (see sw.js).
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+    </script>
+  </body>
+</html>
