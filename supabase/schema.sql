@@ -378,3 +378,10 @@ create policy "members edit expenses" on finance.expenses for update to authenti
   with check (finance.role_in(household_id) in ('member', 'admin'));
 create policy "members delete expenses" on finance.expenses for delete to authenticated
   using (finance.role_in(household_id) in ('member', 'admin'));
+
+-- ---------------------------------------------------------------- security hardening (26 Nov 2026)
+-- Helper used by RLS policies: signed-in users only. Trigger functions are never API calls.
+revoke execute on function finance.role_in(uuid) from public, anon;
+grant execute on function finance.role_in(uuid) to authenticated, service_role;
+revoke execute on function finance.check_expense_category(), finance.handle_new_user(), finance.touch_expense() from public, anon, authenticated;
+alter function finance.touch_expense() set search_path = '';
