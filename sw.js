@@ -3,7 +3,7 @@
 //   and served from the saved copy when offline.
 // - Libraries from the CDN have fixed versions, so the saved copy is used first.
 // - Everything else (the database and sign-in) goes straight to the network.
-const CACHE = 'home-finance-v1';
+const CACHE = 'home-finance-v2';
 const CDN = 'https://cdn.jsdelivr.net/';
 
 self.addEventListener('install', () => self.skipWaiting());

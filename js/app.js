@@ -108,7 +108,7 @@ function Login() {
         ${mode !== 'reset' &&
         html`<label>
           <span>${t('password')}</span>
-          <input type="password" dir="ltr" required minlength="6" value=${f.password} onInput=${set('password')}
+          <input type="password" dir="ltr" required minlength=${mode === 'in' ? 1 : 8} value=${f.password} onInput=${set('password')}
             autocomplete=${mode === 'in' ? 'current-password' : 'new-password'} />
         </label>`}
         <button class="btn primary" disabled=${busy}>${mode === 'reset' ? t('send_reset') : title}</button>
@@ -152,7 +152,7 @@ function SetPassword({ onDone }) {
         ${error && html`<p class="error">${error}</p>`}
         <label>
           <span>${t('new_password')}</span>
-          <input type="password" dir="ltr" required minlength="6" value=${password} onInput=${(e) => setPassword(e.target.value)}
+          <input type="password" dir="ltr" required minlength="8" value=${password} onInput=${(e) => setPassword(e.target.value)}
             autocomplete="new-password" />
         </label>
         <button class="btn primary" disabled=${busy}>${t('save_password')}</button>
